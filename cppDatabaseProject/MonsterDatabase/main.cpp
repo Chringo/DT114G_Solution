@@ -17,7 +17,7 @@ int main()
 	cout << "List size: " << db.size() << endl;
 
 	Monster *entry = db.find("Kisse");
-	db.print(entry);
+//	db.print(entry);
 	db.remove(entry);
 
 	db.printList();
@@ -25,5 +25,6 @@ int main()
 
 	// TODO: Part 2.
 
+	system("pause");
 	return 0;
 }
