@@ -7,7 +7,13 @@ MonsterDB::MonsterDB()
 }
 MonsterDB::~MonsterDB()
 {
-
+	Node* iterator = first;
+	while (iterator != NULL)
+	{
+		first = iterator->next;
+		delete iterator;
+		iterator = first;
+	}
 }
 
 // Adds a monster to the database
@@ -28,21 +34,47 @@ void MonsterDB::add(const Monster& entry)
 	}
 	numNodes++;
 }
-// Searches for THE monster with "name" and returns it. Returns NULL otherwise
+// Searches for the monster with "name" and returns it. Returns NULL otherwise
 Monster *MonsterDB::find(const std::string name)
 {
-	return NULL;
+	Monster *temp = NULL;
+	if (first != NULL)
+	{
+		Node *iterator = first;
+		while (iterator->value.name != name && iterator->next != NULL)
+		{
+			iterator = iterator->next;
+		}
+		if (iterator->value.name == name)
+		{
+			temp = &first->value;
+		}// TODO: If necessary add error message.
+	}
+	return temp;
 }
 // Removes a monster
 void MonsterDB::remove(Monster *entry)
 {
-
-	numNodes--;
+	if (entry != NULL)
+	{
+		//first->value = Monster();
+	}
+	else
+	{
+		std::cout << "Entry is not in database." << std::endl;
+	}
 }
 // Removes all monsters from list
 void MonsterDB::flushList()
 {
-
+	Node* iterator = first;
+	while (iterator != NULL)
+	{
+		first = iterator->next;
+		delete iterator;
+		iterator = first;
+	}
+	numNodes = 0;
 }
 
 // Size of database, number of monsters
@@ -54,10 +86,10 @@ int MonsterDB::size() const
 // Prints out information of a monster
 void MonsterDB::print(Monster *entry) const
 {
-	//std::cout << "Name: " << entry->name << std::endl;
-	//std::cout << "Race: " << entry->race << std::endl;
-	//std::cout << "Occupation: " << entry->occupation << std::endl;
-	std::cout << "Health: " << entry->health << std::endl;
+	std::cout << "Name: " << std::setw(10) << std::left << entry->name
+		<< " Race: " << std::setw(13) << std::left << entry->race
+		<< " Occupation: " << std::setw(17) << std::left << entry->occupation
+		<< " Health: " << std::setw(4) << std::left << entry->health << std::endl;
 }
 // Prints out entire database of monsters
 void MonsterDB::printList() const

@@ -1,31 +1,28 @@
 #ifndef MONSTER_HPP
 #define MONSTER_HPP
+#include <string>
+#include <iomanip>
 #include <iostream>
 
 struct Monster // TODO: Initiate before class but keep a limited scope
 {
-public:
 	std::string name,
 		race,
 		occupation;
 	int health;
 
 	Monster() 
-		: name("Default"), race("Default"), occupation("Default"), health(-1) 
-	{}
-	//{
-	//	name = race = occupation = "Default";
-	//	health = -1;
-	//}
+	{
+		name = race = occupation = "Default";
+		health = -1;
+	}
 	Monster(std::string name_, std::string race_, std::string occupation_, int health_)
-		: name(name_), race(race_), occupation(occupation_), health(health_)
-	{}
-	//{
-	//	name = name_;
-	//	race = race_;
-	//	occupation = occupation_;
-	//	health = health_;
-	//}
+	{
+		name = name_;
+		race = race_;
+		occupation = occupation_;
+		health = health_;
+	}
 };
 
 class MonsterDB
@@ -33,6 +30,8 @@ class MonsterDB
 public:
 	MonsterDB();		// Initiate empty database
 	~MonsterDB();		// Deletes database
+
+
 
 	void add(const Monster& entry);			// Adds a monster to the database
 	Monster *find(const std::string name);	// Searches for THE monster with "name" and returns it. Returns NULL otherwise

@@ -19,9 +19,12 @@ int main()
 	Monster *entry = db.find("Kisse");
 //	db.print(entry);
 	db.remove(entry);
+	entry = db.find("Fnorg");
+	db.remove(entry);
 
 	db.printList();
 	cout << "List size: " << db.size() << endl;
+	//db.flushList();
 
 	// TODO: Part 2.
 
