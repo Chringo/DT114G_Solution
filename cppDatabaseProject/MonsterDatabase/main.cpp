@@ -17,14 +17,17 @@ int main()
 	cout << "List size: " << db.size() << endl;
 
 	Monster *entry = db.find("Kisse");
-//	db.print(entry);
+	db.print(entry);
 	db.remove(entry);
-	entry = db.find("Fnorg");
-	db.remove(entry);
+	//entry = db.find("Fnorg");
+	db.remove(db.find("Fnorg"));
+	db.add(Monster("Asda", "Hertiginna", "Monark", 100));
+	//db.remove(db.find("Asda"));
+	db.remove(db.find("Nisse"));
 
 	db.printList();
 	cout << "List size: " << db.size() << endl;
-	//db.flushList();
+	db.flushList();
 
 	// TODO: Part 2.
 

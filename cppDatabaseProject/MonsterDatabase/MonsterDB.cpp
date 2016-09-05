@@ -47,7 +47,7 @@ Monster *MonsterDB::find(const std::string name)
 		}
 		if (iterator->value.name == name)
 		{
-			temp = &first->value;
+			temp = &iterator->value;
 		}// TODO: If necessary add error message.
 	}
 	return temp;
@@ -57,7 +57,27 @@ void MonsterDB::remove(Monster *entry)
 {
 	if (entry != NULL)
 	{
-		//first->value = Monster();
+		Node *iterator = first;
+		if (iterator->value == *entry)
+		{
+			first = first->next;
+			delete iterator;
+		}
+		else
+		{
+			while (iterator->next != NULL)
+			{
+				if (iterator->next->value == *entry)
+				{
+					Node *temp = iterator->next;
+					iterator->next = iterator->next->next;
+					delete temp;
+					break;
+				}
+				iterator = iterator->next;
+			}
+		}
+		numNodes--;
 	}
 	else
 	{

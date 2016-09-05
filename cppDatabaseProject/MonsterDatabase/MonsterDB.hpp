@@ -23,6 +23,15 @@ struct Monster // TODO: Initiate before class but keep a limited scope
 		occupation = occupation_;
 		health = health_;
 	}
+	bool operator==(const Monster& other)
+	{
+		bool isEqual = false;
+		if (this->name == other.name && this->health == other.health)
+		{
+			isEqual = true;
+		}
+		return isEqual;
+	}
 };
 
 class MonsterDB
@@ -30,7 +39,6 @@ class MonsterDB
 public:
 	MonsterDB();		// Initiate empty database
 	~MonsterDB();		// Deletes database
-
 
 
 	void add(const Monster& entry);			// Adds a monster to the database
