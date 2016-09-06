@@ -65,13 +65,15 @@ void MonsterDB::remove(Monster *entry)
 		}
 		else
 		{
-			while (iterator->next != NULL)
+			//bool notDeleted = true;
+			while (iterator->next != NULL /*&& notDeleted*/)// TODO/Future: Better solution
 			{
 				if (iterator->next->value == *entry)
 				{
 					Node *temp = iterator->next;
 					iterator->next = iterator->next->next;
 					delete temp;
+					//notDeleted = false;
 					break;
 				}
 				iterator = iterator->next;
