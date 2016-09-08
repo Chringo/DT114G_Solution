@@ -86,10 +86,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Human.hpp" />
+    <ClInclude Include="MonsterClass.hpp" />
     <ClInclude Include="MonsterDB.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Human.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MonsterClass.cpp" />
     <ClCompile Include="MonsterDB.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

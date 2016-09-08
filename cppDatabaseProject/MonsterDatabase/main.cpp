@@ -1,5 +1,6 @@
 #include <iostream>
 #include "MonsterDB.hpp"
+#include "Human.hpp"
 
 using namespace std;
 
@@ -30,6 +31,8 @@ int main()
 	db.flushList();
 
 	// TODO: Part 2.
+	Human h("Bob", "Snickare", 1);
+	//MonsterClass mc;
 
 	system("pause");
 	return 0;
