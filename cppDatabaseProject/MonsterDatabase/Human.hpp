@@ -1,13 +1,15 @@
-#pragma once
+#ifndef HUMAN_HPP
+#define HUMAN_HPP
 #include "MonsterClass.hpp"
 class Human : public MonsterClass
 {
 public:
-	Human(std::string _name, std::string _occupation, int _health);
+	Human(std::string _name, std::string _occupation, int _health, bool _isGreedy);
 	virtual ~Human();
 
-	std::string getName() const;
-	std::string getOccupation() const;
-	virtual int getHealth() const;
+	virtual void setHealth(int value);
+	virtual std::string printMonster() const;
+private:
+	bool isGreedy;
 };
-
+#endif

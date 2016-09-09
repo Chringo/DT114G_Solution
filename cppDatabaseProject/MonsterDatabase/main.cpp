@@ -30,10 +30,12 @@ int main()
 	cout << "List size: " << db.size() << endl;
 	db.flushList();
 
-	// TODO: Part 2.
-	Human h("Bob", "Snickare", 1);
-	//MonsterClass mc;
-
+	//__PART 2__TESTS
+	Human h("Bob", "Byggare", 1, true);
+	MonsterClass *aptr = &h;
+	cout << aptr->printMonster(); // virtual makes sure that Human::printMonster() is called here.
+	aptr->setHealth(5);
+	cout << h.printMonster();
 	system("pause");
 	return 0;
 }

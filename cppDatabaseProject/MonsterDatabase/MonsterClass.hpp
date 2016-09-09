@@ -10,8 +10,10 @@ public:
 
 	std::string getName() const;
 	std::string getOccupation() const;
-	virtual int getHealth() const;
-	//virtual void setHealth(int value) = 0;
+	int getHealth() const;
+	virtual void setHealth(int value) = 0;
+
+	virtual std::string printMonster() const;
 protected:
 	std::string name,
 		occupation;

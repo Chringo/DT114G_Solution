@@ -1,28 +1,34 @@
 #include "Human.hpp"
 
 
-Human::Human(std::string _name, std::string _occupation, int _health)
+Human::Human(std::string _name, std::string _occupation, int _health, bool _isGreedy) : MonsterClass(_name, _occupation, _health)
 {
-	name = _name;
-	occupation = _occupation;
-	health = _health;
-	getHealth();
-	getName();
-	getOccupation();
+	isGreedy = _isGreedy;
 }
-Human::~Human()
+Human::~Human(){}
+
+void Human::setHealth(int value)
 {
+	if (isGreedy)
+	{
+		health += (int)(value * 0.5f);
+	}
+	else
+	{
+		health += value;
+	}
 }
 
-std::string Human::getName() const
+std::string Human::printMonster() const
 {
-	return name;
-}
-std::string Human::getOccupation() const
-{
-	return occupation;
-}
-int Human::getHealth() const
-{
-	return health;
+	std::string data = MonsterClass::printMonster();
+	if (isGreedy)
+	{
+		data += "This human is only looking for profit!\n";
+	}
+	else
+	{
+		data += "This human may consider some self-sacrifice\n";
+	}
+	return data;
 }
