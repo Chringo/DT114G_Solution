@@ -86,11 +86,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Elf.hpp" />
     <ClInclude Include="Human.hpp" />
     <ClInclude Include="MonsterClass.hpp" />
     <ClInclude Include="MonsterDB.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Elf.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MonsterClass.cpp" />
