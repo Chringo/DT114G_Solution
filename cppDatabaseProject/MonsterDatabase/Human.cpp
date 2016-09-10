@@ -18,7 +18,10 @@ void Human::setHealth(int value)
 		health += value;
 	}
 }
-
+void Human::setGreed(bool _isGreedy)
+{
+	isGreedy = _isGreedy;
+}
 std::string Human::printMonster() const
 {
 	std::string data = MonsterClass::printMonster();

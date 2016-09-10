@@ -8,6 +8,7 @@ public:
 	virtual ~Human();
 
 	virtual void setHealth(int value);
+	void setGreed(bool _isGreedy);
 	virtual std::string printMonster() const;
 private:
 	bool isGreedy;

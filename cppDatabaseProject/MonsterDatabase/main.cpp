@@ -35,6 +35,7 @@ int main()
 	MonsterClass *aptr = &h;
 	cout << aptr->printMonster(); // virtual makes sure that Human::printMonster() is called here.
 	aptr->setHealth(5);
+	//aptr->setGreed(false); // 
 	cout << h.printMonster();
 	system("pause");
 	return 0;
