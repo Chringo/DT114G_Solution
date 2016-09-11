@@ -1,6 +1,7 @@
 #include <iostream>
 #include "MonsterDB.hpp"
 #include "Human.hpp"
+#include "Elf.hpp"
 
 using namespace std;
 
@@ -37,6 +38,8 @@ int main()
 	aptr->setHealth(5);
 	//aptr->setGreed(false); // 
 	cout << h.printMonster();
+
+	Elf e("Legolas", "Skytt", 25, false);
 	system("pause");
 	return 0;
 }
