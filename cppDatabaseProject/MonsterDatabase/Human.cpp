@@ -31,7 +31,7 @@ std::string Human::printMonster() const
 	}
 	else
 	{
-		data += "This human may consider some self-sacrifice\n";
+		data += "This human may consider some self-sacrifice.\n";
 	}
 	return data;
 }

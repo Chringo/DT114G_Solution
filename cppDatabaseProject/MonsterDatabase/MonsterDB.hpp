@@ -4,7 +4,7 @@
 #include <iomanip>
 #include <iostream>
 
-struct Monster // TODO: Initiate before class but keep a limited scope
+struct Monster
 {
 	std::string name,
 		race,

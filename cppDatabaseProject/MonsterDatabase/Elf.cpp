@@ -22,3 +22,20 @@ void Elf::setHealth(int value)
 		health += value;
 	}
 }
+void Elf::setVegan(bool _isVegan)
+{
+	isVegan = _isVegan;
+}
+std::string Elf::printMonster() const
+{
+	std::string data = MonsterClass::printMonster();
+	if (isVegan)
+	{
+		data += "This elf doesn't hunt animals.\n";
+	}
+	else
+	{
+		data += "This elf can be your hunter!\n";
+	}
+	return data;
+}

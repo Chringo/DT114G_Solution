@@ -8,6 +8,8 @@ public:
 	virtual ~Elf();
 
 	virtual void setHealth(int value);
+	void setVegan(bool isVegan);
+	virtual std::string printMonster() const;
 private:
 	bool isVegan;
 };
